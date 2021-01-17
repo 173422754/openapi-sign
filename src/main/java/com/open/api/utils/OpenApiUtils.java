@@ -20,7 +20,7 @@ public class OpenApiUtils {
     public static void main(String[] args) {
         String appKey = "16b213e835ef345bfb5eb1efe1fc43ae";
         String sceret = "5fa906be83dca8c379251fe58bb5de9f";
-        String requestUrl = "http://localhost:6789/open/pingan/user/import";
+        String requestUrl = "http://toufang.shpantai.com/open/pingan/user/import";
         HashMap<String, String> header = Maps.newHashMap();
         header.put("Content-Type","application/json; charset=utf-8");
         HashMap<String, String> params = Maps.newHashMap();
