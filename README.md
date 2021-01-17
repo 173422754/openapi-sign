@@ -1,5 +1,6 @@
 # openapi-sign
 ## openapi签名工具使用说明
+## [用户信息导入接口文档](https://github.com/173422754/openapi-sign/blob/main/openapi.md)
 ### 一. 申请开发者权限：
 
 联系管理员获取appkey和secret，用户接口调用时权限验证。
@@ -58,4 +59,4 @@ curl -X POST "http://toufang.shpantai.com/open/pingan/user/import" -H "Content-T
 工具类：OpenApiUtils.java
 
 ### 四. 接口文档：
-[https://github.com/173422754/openapi-sign/blob/main/openapi.md](https://github.com/173422754/openapi-sign/blob/main/openapi.md)
+[用户信息导入接口文档](https://github.com/173422754/openapi-sign/blob/main/openapi.md)
