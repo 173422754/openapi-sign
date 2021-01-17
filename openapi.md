@@ -53,12 +53,12 @@
 **Method：** GET
 
 **接口描述：**
-<p><strong>一. 申请开发者权限：</strong><br>
-联系管理员获取appkey和secret，用户接口调用时权限验证。<br>
-例如：<br>
+<h3>一. 申请开发者权限：</h3>
+<p>联系管理员获取appkey和secret，用户接口调用时权限验证。</p>
+<p>例如：<br>
 appKey : 16b213e835ef345bfb5eb1efe1fc43ae<br>
 secret : 5fa906be83dca8c379251fe58bb5de9f</p>
-<p><strong>二. 签名生成算法：</strong></p>
+<h3>二. 签名生成算法：</h3>
 <ol>
 <li>签名的规则: 请求参数按照<span class="colour" style="color:rgb(255, 0, 0)"><strong>字典排序</strong></span>，然后以 keyvalue 的形式拼<br>
 接成字符串;<span class="colour" style="color:rgb(255, 0, 0)">最后 sign=MD5(sortParam+secret)</span>。</li>
@@ -66,7 +66,7 @@ secret : 5fa906be83dca8c379251fe58bb5de9f</p>
 入签名字符串。</li>
 <li>例如:</li>
 </ol>
-<pre><code>请求参数：
+<pre><code>- 请求参数：
 {
 &nbsp; &nbsp; 'name': '朱小明',
 &nbsp; &nbsp; 'mobileNumber': '13311112222',
@@ -74,7 +74,8 @@ secret : 5fa906be83dca8c379251fe58bb5de9f</p>
 &nbsp; &nbsp; 'appKey': '16b213e835ef345bfb5eb1efe1fc43ae',
 &nbsp; &nbsp; 'time': '1610867408754'
 }
-第一步：字典排序
+
+- 第一步：字典排序
 {
 &nbsp; &nbsp; 'appKey': '16b213e835ef345bfb5eb1efe1fc43ae',
 &nbsp; &nbsp; 'certNo': '8888',
@@ -82,27 +83,22 @@ secret : 5fa906be83dca8c379251fe58bb5de9f</p>
 &nbsp; &nbsp; 'name': '朱小明',
 &nbsp; &nbsp; 'time': '1610867408754'
 }
-第二步：排序后拼keyvalue
+
+- 第二步：排序后拼keyvalue
 string = appKey16b213e835ef345bfb5eb1efe1fc43aecertNo8888mobileNumber13311112222name
-第三步：私钥签名
+
+- 第三步：私钥签名
 secret = 5fa906be83dca8c379251fe58bb5de9f
 sign = MD5(string+secret) = MD5(appKey16b213e835ef345bfb5eb1efe1fc43aecertNo8888mobileNumber13311112222name朱小明time16108674087545fa906be83dca8c379251fe58bb5de9f)
 sign = f9fe388a6999cba4b0cb46c70a07c76b
-第四步：发送post请求
-curl --location --request POST '[http://toufang.shpantai.com/open/pingan/user/import](http://toufang.shpantai.com/open/pingan/user/import)' \
---header 'Content-Type: application/json' \
---data-raw '{
-&nbsp;&nbsp;&nbsp; "name":"朱小明",
-&nbsp;&nbsp;&nbsp; "mobileNumber":"13311112222",
-&nbsp;&nbsp;&nbsp; "certNo":"8888",
-&nbsp;&nbsp;&nbsp; "appKey":"16b213e835ef345bfb5eb1efe1fc43ae",
-&nbsp;&nbsp;&nbsp; "time":"1610867408754",
-&nbsp;&nbsp;&nbsp; "sign":"f9fe388a6999cba4b0cb46c70a07c76b"
-}'
+
+- 第四步：发送post请求
+curl -X POST "http://toufang.shpantai.com/open/pingan/user/import" -H "Content-Type: application/json" --data '{"name":"朱小明","mobileNumber":"13311112222","certNo":"8888","appKey":"16b213e835ef345bfb5eb1efe1fc43ae","time":"1610867408754","sign":"f9fe388a6999cba4b0cb46c70a07c76b"}'
 </code></pre>
-<p>三. java SDK：<br>
-<a href="https://github.com/173422754/openapi-sign">https://github.com/173422754/openapi-sign</a><br>
-工具了：OpenApiUtils.java</p>
+<h3>三. java SDK：</h3>
+<p><a href="https://github.com/173422754/openapi-sign">https://github.com/173422754/openapi-sign</a><br>
+<a href="https://github.com/173422754/openapi-sign/blob/main/src/main/java/com/open/api/utils/OpenApiUtils.java">https://github.com/173422754/openapi-sign/blob/main/src/main/java/com/open/api/utils/OpenApiUtils.java</a><br>
+工具类：OpenApiUtils.java</p>
 
 
 ### 请求参数

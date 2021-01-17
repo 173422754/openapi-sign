@@ -5,6 +5,7 @@
 联系管理员获取appkey和secret，用户接口调用时权限验证。
 
 例如：
+
 appKey : 16b213e835ef345bfb5eb1efe1fc43ae
 
 secret : 5fa906be83dca8c379251fe58bb5de9f
@@ -45,16 +46,7 @@ sign = MD5(string+secret) = MD5(appKey16b213e835ef345bfb5eb1efe1fc43aecertNo8888
 sign = f9fe388a6999cba4b0cb46c70a07c76b
 
 - 第四步：发送post请求
-curl --location --request POST '[http://toufang.shpantai.com/open/pingan/user/import](http://toufang.shpantai.com/open/pingan/user/import)' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name":"朱小明",
-    "mobileNumber":"13311112222",
-    "certNo":"8888",
-    "appKey":"16b213e835ef345bfb5eb1efe1fc43ae",
-    "time":"1610867408754",
-    "sign":"f9fe388a6999cba4b0cb46c70a07c76b"
-}'
+curl -X POST "http://localhost:6789/open/pingan/user/import" -H "Content-Type: application/json" --data '{"name":"朱小明","mobileNumber":"13311112222","certNo":"8888","appKey":"16b213e835ef345bfb5eb1efe1fc43ae","time":"1610867408754","sign":"f9fe388a6999cba4b0cb46c70a07c76b"}'
 ```
 
 ### 三. java SDK：
