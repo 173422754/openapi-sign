@@ -18,8 +18,8 @@ import java.util.TreeMap;
 public class OpenApiUtils {
 
     public static void main(String[] args) {
-        String appKey = "16b213e835ef345bfb5eb1efe1fc43ae";
-        String sceret = "5fa906be83dca8c379251fe58bb5de9f";
+        String appKey = "a1c25033802945b0ad209874883df943";
+        String sceret = "33e32e16852d40c28546b77dcef0db03";
         String requestUrl = "http://toufang.shpantai.com/open/pingan/user/import";
         HashMap<String, String> header = Maps.newHashMap();
         header.put("Content-Type","application/json; charset=utf-8");
