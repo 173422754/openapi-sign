@@ -48,6 +48,8 @@ sign = f9fe388a6999cba4b0cb46c70a07c76b
 
 - 第四步：发送post请求
 curl -X POST "http://toufang.shpantai.com/open/pingan/user/import" -H "Content-Type: application/json" --data '{"name":"朱小明","mobileNumber":"13311112222","certNo":"8888","appKey":"16b213e835ef345bfb5eb1efe1fc43ae","time":"1610867408754","sign":"f9fe388a6999cba4b0cb46c70a07c76b"}'
+调试和测试阶段可以使用下面test链接（验证接口和签名，不会发送数据到平安）：
+http://toufang.shpantai.com/open/pingan/user/import/test
 ```
 
 ### 三. java SDK：
