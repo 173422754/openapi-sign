@@ -27,9 +27,14 @@ public class OpenApiUtils {
         HashMap<String, String> header = Maps.newHashMap();
         header.put("Content-Type","application/json; charset=utf-8");
         HashMap<String, String> params = Maps.newHashMap();
-        params.put("name", "朱小明");
-        params.put("mobileNumber", "13311112222");
-        params.put("certNo", "8888");
+        params.put("clientName", "测试");
+        params.put("mobileNo", "13311112222");
+        params.put("clientGender", "男");
+        params.put("dateClientBirth", "2000-01-02");
+        params.put("clientIdNo", "4123321231111");
+        params.put("clientIdType", "身份证");
+        params.put("city", "上海");
+        params.put("requestId", "requestId");
         params.put("appKey", appKey);
         params.put("time", String.valueOf(System.currentTimeMillis()));
         params.put("sign", getSign(params, sceret));
